@@ -5,4 +5,4 @@ class Url:
     USER_LOGOUT_URL = '/auth/logout'
     USER_INFORMATION_URL = '/auth/user'
     ORDER_CREATION_URL = '/orders'
-
+    INGREDIENT_URL = '/ingredients'
