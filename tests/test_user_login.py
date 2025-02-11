@@ -1,7 +1,5 @@
-import requests
 import allure
 
-from curl import Url
 from methods.user_methods import UserMethods
 
 class TestUserLogin:
@@ -20,7 +18,7 @@ class TestUserLogin:
     @allure.title("Проверка невозможности авторизации пользователя с E-mail, несуществующим в БД")
     @allure.description(
         "Создаем нового пользователя и производим его авторизацию в ручке POST /api/auth/login с указанием E-mail, отсутствующего в БД, проверяем корректность кода и тела ответа об ошибке авторизации с несуществующей парой логин-пароль")
-    def test_login_with_unexisted_login(self, user_methods, generate_user_data):
+    def test_login_with_nonexistent_login(self, user_methods, generate_user_data):
         response, response_data, user_data = generate_user_data
         login_data = {
             "email": "nonexistent_email",
