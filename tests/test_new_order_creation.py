@@ -9,7 +9,7 @@ class TestNewOrderCreation:
     @allure.description("Тест проверяет возможность создания заказа авторизованным пользователем в ручке POST /api/orders с использованием валидных ингредиентов.")
     def test_new_order_creation_with_authorization(self, login_user):
         response, response_data, login_data, user_data, access_token = login_user
-        token = response_data['accessToken']
+        token = access_token
         ingredients_response = OrderMethods.get_ingredients()
         ingredients_data = ingredients_response.json()['data']
         ingredient_ids = [ingredients_data[0]['_id'], ingredients_data[1]['_id']]

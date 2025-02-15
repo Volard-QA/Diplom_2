@@ -8,7 +8,7 @@ class TestUserInformationChange:
     @allure.description("Тест проверяет возможность изменения данных пользователя через PATCH запрос ручки api/auth/user и получение обновленных данных через GET запрос.")
     def test_update_user_data(self, login_user):
         response, response_data, login_data, user_data, access_token = login_user
-        token = response_data['accessToken']
+        token = access_token
         headers = {
         "Authorization": token
         }
@@ -28,7 +28,7 @@ class TestUserInformationChange:
     @allure.title("Проверка изменения данных пользователя без авторизации")
     @allure.description(
         "Тест проверяет, что система возвращает ошибку при попытке изменения данных пользователя в ручке PATCH api/auth/user без авторизации.")
-    def test_update_unauthorized_user_data(self, generate_user):
+    def test_update_unauthorized_user_data(self):
         headers = {
             "Authorization": ""
         }
