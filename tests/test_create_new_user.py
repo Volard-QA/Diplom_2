@@ -28,8 +28,7 @@ class TestCreateUser:
         and duplicate_response_data_text == expected_response)
 
     @allure.title("Проверка невозможности создания пользователя без одного из обязательных полей")
-    @allure.description(
-        "Создаем нового пользователя без указания логина в ручке POST /api/auth/register, проверяем корректность кода и тела ответа об ошибке отсутствия данных обязательного поля")
+    @allure.description("Создаем нового пользователя без указания логина в ручке POST /api/auth/register, проверяем корректность кода и тела ответа об ошибке отсутствия данных обязательного поля")
     def test_create_courier_without_required_field(self, user_methods):
         user_data = {
             "email": "",

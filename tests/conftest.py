@@ -1,7 +1,5 @@
 import pytest
-import requests
 
-from curl import Url
 from generators import generate_new_user_data
 from methods.user_methods import UserMethods
 

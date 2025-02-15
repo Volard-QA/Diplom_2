@@ -5,8 +5,7 @@ from methods.user_methods import UserMethods
 
 class TestUserInformationChange:
     @allure.title("Проверка изменения данных авторизованного пользователя")
-    @allure.description(
-        "Тест проверяет возможность изменения данных пользователя через PATCH запрос ручки api/auth/user и получение обновленных данных через GET запрос.")
+    @allure.description("Тест проверяет возможность изменения данных пользователя через PATCH запрос ручки api/auth/user и получение обновленных данных через GET запрос.")
     def test_update_user_data(self, login_user):
         response, response_data, login_data, user_data, access_token = login_user
         token = response_data['accessToken']

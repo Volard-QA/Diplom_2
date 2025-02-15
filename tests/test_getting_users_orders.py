@@ -5,7 +5,7 @@ from methods.order_methods import OrderMethods
 
 class TestGettingOrders:
     @allure.title("Получение заказов авторизованного пользователя")
-    @allure.description("Тест проверяет возможность получения заказов конкретного авторизованного пользователя.")
+    @allure.description("Тест проверяет возможность получения заказов конкретного авторизованного пользователя в ручке GET /api/orders, проверяем корректность кода и тела ответа.")
     def test_get_orders_authorized_user(self, login_user):
         response, response_data, login_data, user_data, access_token = login_user
         token = response_data['accessToken']
@@ -38,7 +38,7 @@ class TestGettingOrders:
                 and order['status'] in ["done", "pending", "canceled"])
 
     @allure.title("Получение заказов неавторизованного пользователя")
-    @allure.description("Тест проверяет, что неавторизованный пользователь не может получить список заказов.")
+    @allure.description("Тест проверяет, что неавторизованный пользователь не может получить список заказов в ручке GET /api/orders.")
     def test_get_orders_unauthorized_user(self):
         headers = {
             "Authorization": ""
