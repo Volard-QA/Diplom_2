@@ -1,4 +1,3 @@
-import pytest
 import requests
 from curl import Url
 

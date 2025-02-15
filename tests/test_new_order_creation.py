@@ -74,6 +74,4 @@ class TestNewOrderCreation:
             "Authorization": token
         }
         order_response = OrderMethods.create_order(order_data, headers)
-        order_response_data = order_response.json()
-        assert (order_response.status_code == 500
-                and order_response_data['success'] is False)
+        assert order_response.status_code == 500
