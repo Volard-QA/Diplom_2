@@ -74,4 +74,6 @@ class TestNewOrderCreation:
             "Authorization": token
         }
         order_response = OrderMethods.create_order(order_data, headers)
-        assert order_response.status_code == 500
+        response_text = order_response.text
+        assert (order_response.status_code == 500 and
+                'Internal Server Error' in response_text)
