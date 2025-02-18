@@ -1,7 +1,7 @@
 import allure
 
 from methods.order_methods import OrderMethods
-from tests.data import OrderData
+from data import OrderData
 
 
 class TestNewOrderCreation:

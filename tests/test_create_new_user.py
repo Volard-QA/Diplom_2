@@ -1,6 +1,6 @@
 import allure
 
-from tests.data import UserResponse
+from data import UserResponse
 
 class TestCreateUser:
     @allure.title("Проверка успешного создания нового пользователя")
